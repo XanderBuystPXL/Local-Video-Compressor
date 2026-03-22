@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Compressor</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Compressor</h1>
+            <p>Smart video compression tailored for highest perceived quality.</p>
+        </header>
+
+        <main>
+            <div id="dropzone" class="dropzone">
+                <div class="dropzone-content">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="upload-icon">
+                        <path d="M12 4L12 16M12 4L8 8M12 4L16 8M4 17L4 19C4 19.5304 4.21071 20.0391 4.58579 20.4142C4.96086 20.7893 5.46957 21 6 21L18 21C18.5304 21 19.0391 20.7893 19.4142 20.4142C19.7893 20.0391 20 19.5304 20 19L20 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3 id="file-name-display">Drag & Drop your video here</h3>
+                    <p class="subtitle">or <span class="browse-link">click to browse</span></p>
+                    <input type="file" id="file-input" accept="video/*" hidden>
+                </div>
+            </div>
+
+            <div class="settings">
+                <label for="target-size">Target Size (MB)</label>
+                <div class="input-group">
+                    <input type="number" id="target-size" value="10" min="0.1" step="0.1">
+                    <span class="unit">MB</span>
+                </div>
+            </div>
+
+            <button id="compress-btn" class="btn-primary" disabled>Compress Video</button>
+
+            <div id="status" class="status hidden">
+                <div class="loader"></div>
+                <p id="status-text">Processing...</p>
+            </div>
+            
+            <div id="error-message" class="error hidden"></div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
