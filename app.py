@@ -43,7 +43,7 @@ def cleanup_files(files: list[str]):
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="index.html")
 
 @app.post("/compress")
 async def compress_video(
